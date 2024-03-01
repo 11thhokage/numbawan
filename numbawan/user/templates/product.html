@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block title %} Kopitler {% endblock %}
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="var(--first-color)" fill-opacity="1"
+        d="M0,160L34.3,144C68.6,128,137,96,206,90.7C274.3,85,343,107,411,128C480,149,549,171,617,170.7C685.7,171,754,149,823,122.7C891.4,96,960,64,1029,80C1097.1,96,1166,160,1234,192C1302.9,224,1371,224,1406,224L1440,224L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+    </path>
+</svg>
+<section class="overlap_section_login">
+    <div class="container mt-lg-5 mb-5">
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'menu' %}"> <span><b>Category</b></span></a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><b>Product Name</b></li>
+                </ol>
+            </nav>
+            <hr>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#view_prod" aria-controls="offcanvasRight">
+                            <div class="card mt-lg-3" style="background-color: #181818; width: 80%; border: none;">
+                                <div class="card-body text-center">
+                                    <div>
+                                        <img src="../static/img/menu/menu_img_1.png" alt="Category Image" width="100%">
+                                    </div>
+                                    <h6 style="letter-spacing: 3px; font-size: 12pt; color: white;">Menu Title</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- VIEW PRODUCT OFFCANVAS -->
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="view_prod" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Product Name</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                      <th scope="col">Product Name</th>
+                                      <th scope="col">Stock</th>
+                                      <th scope="col">Description</th>
+                                      <th scope="col">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <td>12</td>
+                                        <td>Description Test</td>
+                                        <td>300.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

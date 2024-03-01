@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %} Register - Kopitler {% endblock %}
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#006241" fill-opacity="1"
+        d="M0,320L26.7,309.3C53.3,299,107,277,160,245.3C213.3,213,267,171,320,144C373.3,117,427,107,480,128C533.3,149,587,203,640,192C693.3,181,747,107,800,74.7C853.3,43,907,53,960,64C1013.3,75,1067,85,1120,122.7C1173.3,160,1227,224,1280,218.7C1333.3,213,1387,139,1413,101.3L1440,64L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z">
+    </path>
+</svg>
+<section class="overlap_section">
+    <div class="container container_register" style="width: 50%;">
+        <div class="row mb-5">
+            <div class="col-lg-12 col-sm-12">
+                <div class="card text-black">
+                    <div class="card-header text-center" style="background-color: var(--first-color)">
+                        <h4 class="text-white" style="letter-spacing: 3px; font-size: 20pt;">Register Account</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="#" method="POST">
+                            <div class="row px-2">
+                                <div class="container col-lg-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email address</label>
+                                        <input type="email" name="email" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Birthdate</label>
+                                        <input type="date" id="birthday" name="birthday" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="container col-lg-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone</label>
+                                        <input type="number" name="phone" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label"><small><i class="fa-solid fa-key"></i>
+                                                Password</label></small>
+                                        <div class="input-group">
+                                            <input type="password" name="password" id="password" class="form-control">
+                                            <button type="button" class="btn btn-outline-primary"
+                                                onclick="togglePasswordVisibility()">
+                                                <i class="fa-solid fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Confirm Password</label>
+                                        <input type="password" name="cpassword" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" name="register" class="btn btn-outline-success btn-sm">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

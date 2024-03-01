@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %} Our Menu {% endblock %}
+{% block content %}
+<section style="background-image: url('../static/img/dummy_img_2.png') !important; background-repeat: no-repeat !important; background-attachment: fixed; background-position: center; background-size: cover;">
+    <div class=" container">
+    <div class="row min-vh-100 align-items-center">
+        <div class="col-lg-12 col-sm-12 text-center">
+            <h1 style="letter-spacing: 10px; font-size: 50pt; color: #1f8555;">Our Menu</h1>
+            <h3 id="text" style="letter-spacing: 3px; font-size: 15pt;" class="text-white"></h3>
+            <button type="button" class="btn btn-success mt-lg-2 btn-sm">Discover our flavors!</button>
+        </div>
+    </div>
+    </div>
+</section>
+<section style="background-color: #e4e4e4;">
+    <div class="container py-lg-5">
+        <div class="row min-vh-50">
+            <h3>Category</h3>
+            <hr>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="{% url 'product' %}">
+                            <div class="card mt-lg-3" style="background-color: #181818; width: 80%; border: none;">
+                                <div class="card-body text-center">
+                                    <div>
+                                        <img src="../static/img/menu/menu_img_1.png" alt="Category Image" width="100%">
+                                    </div>
+                                    <h6 style="letter-spacing: 3px; font-size: 12pt; color: white;">Menu Title</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

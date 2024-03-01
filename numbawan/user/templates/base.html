@@ -12,47 +12,13 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top" id="header">
-        <div class="container">
-            <a href="#" class="navbar-brand text-white">
-                Kopitler
-            </a>
-            <button class="navbar-toggler custom-toggler" style="border: none !important;" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="color:#fff !important;">
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item text-white">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            User Name Logged
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping fa-fade"></i> My Cart</a></li>
-                            <li><a class="dropdown-item" href="#">  <i class="fa-solid fa-cog fa-spin"></i>
-                                Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-fade"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div>{% block content %} {% endblock %}</div>
+    {% include 'user_navbar.html' %}
 
+    <section>
+        <div>{% block content %} {% endblock %}</div>
+    </section>
 
+    <hr>
     <footer>
         <div class="footer-bottom">
             <div class="container">
@@ -71,7 +37,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="{% static 'js/designfunc.js' %}"></script>
     <script src="https://kit.fontawesome.com/f200f2da0d.js" crossorigin="anonymous"></script>

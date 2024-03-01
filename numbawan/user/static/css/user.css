@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap');
 :root {
-  --first-color: #8f0d0d;
-  --text-color: #ffffff;
-  --section: #e4e4e477;
-  --body-color: #ececec;
+  --first-color: #006241;
+  --section: #e4e4e4;
+  --body-color: #f2f2f2;
   --body-font: 'Poppins', sans-serif;
 }
-
 /* <--------GLOBAL ELEMENT--------> */
   ::-webkit-scrollbar {
     width: 10px;
@@ -70,7 +68,7 @@
   }
   .dropdown-item:hover {
     background-color: var(--first-color) !important;
-    color: var(--text-color) !important;
+    color: white !important;
     border-radius: 3px !important;
   }
   .nav-link {
@@ -78,31 +76,39 @@
   }
 /* <--------END OF NAV DESIGN--------> */
 
+/* <--------SECTION DESIGN--------> */
+.overlap_section, .overlap_section_login{
+  margin-top: -120px;
+}
 /* <--------RESPONSIVE VIEW --------> */
   @media(max-width: 820px) {
-    .row {
-      flex-direction: column;
-    }
+
   }
   @media screen and (max-width: 768px) {
     /* TABLET VIEW */
     body {
       margin: 0;
     }
-    .home-container1-content{
-      margin-top: 15rem !important;
+    .overlap_section{
+      margin-top: -10px;
+    }
+    .overlap_section_login{
+      margin-top: 70px !important;
+    }
+    .container_register, .container_login{
+      width: 100% !important;
     }
   }
   @media screen and (max-width: 375px) {
     /* MOBILE VIEW */
-    .home-container1-content{
-      margin-top: 1rem !important;
+    .overlap_section{
+      margin-top: -10px;
     }
-    .overlap-main{
-      margin-bottom: 20% !important;
-      max-width: 90% !important;
-      padding: 30px;
-      margin-top: -150px;
+    .overlap_section_login{
+      margin-top: 100px !important;
+    }
+    .container_register, .container_login{
+      width: 100% !important;
     }
   }
 /* <--------RESPONSIVE VIEW --------> */
