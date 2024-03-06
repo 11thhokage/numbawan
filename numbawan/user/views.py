@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from .models import Profile
+from .forms import RegisterForm
 
 def home(request):
     return render(request, "home.html")
@@ -19,4 +21,12 @@ def login(request):
     return render(request, 'login.html')
 
 def register(request):
-    return render(request, 'register.html')
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            profile = Profile(user=user, **form.cleaned_data)
+            profile.save()
+    else:
+        form = RegisterForm()
+    return render(request, 'register.html', {'form': form})
