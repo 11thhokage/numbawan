@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block title %} Register - Kopitler {% endblock %}
 {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -35,14 +35,14 @@
                                 <div class="container col-lg-6 col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label">Phone</label>
-                                        <input type="number" name="phone" class="form-control">
+                                        <input type="number" name="phone" class="form-control" maxlength="11">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label"><small><i class="fa-solid fa-key"></i>
                                                 Password</label></small>
                                         <div class="input-group">
-                                            <input type="password" name="password" id="password" class="form-control">
+                                            <input type="password" name="password1" id="password" class="form-control">
                                             <button type="button" class="btn btn-outline-primary"
                                                 onclick="togglePasswordVisibility()">
                                                 <i class="fa-solid fa-eye"></i>
@@ -51,15 +51,21 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Confirm Password</label>
-                                        <input type="password" name="cpassword" class="form-control">
+                                        <input type="password" name="password2" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="register"
-                                    class="btn btn-outline-success btn-sm">Submit</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm">Submit</button>
                             </div>
                         </form>
+                        {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>
