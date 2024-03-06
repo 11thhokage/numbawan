@@ -9,7 +9,7 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField(
         max_length=255, help_text="Require. Inform a valid email address."
     )
-    phone = forms.IntegerField(
+    phone = forms.CharField(
         validators=[MinLengthValidator(11), MaxLengthValidator(11)],
         help_text='Required. Must be exactly 11 numbers.'
     )
@@ -28,6 +28,17 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["name", "email", "birthday", "phone", "password1", "password2"]
+        
+    def clean_phone(self):
+        phone = self.cleaned_data.get('phone')
+        if phone:
+            if len(phone) != 11:
+                raise forms.ValidationError('Phone number must be exactly 11 characters long.')
+            try:
+                return int(phone)
+            except ValueError:
+                raise forms.ValidationError('Phone number must be a number not characters.')
+        return int(phone)
 
     def save(self, commit=True):
         user = super().save(commit=False)
