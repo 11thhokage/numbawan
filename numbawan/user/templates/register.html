@@ -59,12 +59,17 @@
                                 <button type="submit" class="btn btn-outline-success btn-sm">Submit</button>
                             </div>
                         </form>
-                        {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                        {% if form.errors %}
+                        <br>
+                        <div class="alert alert-danger" role="alert">
+                            <ul class="errorlist">
+                                {% for field in form %}
+                                {% for error in field.errors %}
+                                <li>{{ field.label }}: {{ error }}</li>
                                 {% endfor %}
-                        </ul>
+                                {% endfor %}
+                            </ul>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
