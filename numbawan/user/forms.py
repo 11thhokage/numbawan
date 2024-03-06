@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import MinLengthValidator, MaxLengthValidator
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 
@@ -11,7 +11,7 @@ class RegisterForm(UserCreationForm):
     )
     phone = forms.CharField(
         validators=[MinLengthValidator(11), MaxLengthValidator(11)],
-        help_text='Required. Must be exactly 11 numbers.'
+        help_text="Required. Must be exactly 11 numbers.",
     )
     birthday = forms.DateField(help_text="Require.")
     password1 = forms.CharField(
@@ -28,16 +28,20 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["name", "email", "birthday", "phone", "password1", "password2"]
-        
+
     def clean_phone(self):
-        phone = self.cleaned_data.get('phone')
+        phone = self.cleaned_data.get("phone")
         if phone:
             if len(phone) != 11:
-                raise forms.ValidationError('Phone number must be exactly 11 characters long.')
+                raise forms.ValidationError(
+                    "Phone number must be exactly 11 characters long."
+                )
             try:
                 return int(phone)
             except ValueError:
-                raise forms.ValidationError('Phone number must be a number not characters.')
+                raise forms.ValidationError(
+                    "Phone number must be a number not characters."
+                )
         return int(phone)
 
     def save(self, commit=True):
@@ -56,3 +60,7 @@ class RegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class LoginForm(AuthenticationForm):
+    username = forms.EmailField(label='email')
+    password = forms.CharField(widget=forms.PasswordInput)

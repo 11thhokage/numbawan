@@ -1,31 +1,51 @@
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
-from django.http import HttpResponseBadRequest
 from django.db import IntegrityError
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Profile
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
+
 
 def home(request):
     return render(request, "home.html")
 
+
 def menu(request):
-    return render(request, 'menu.html')
+    return render(request, "menu.html")
+
 
 def product(request):
-    return render(request, 'product.html')
+    return render(request, "product.html")
+
 
 def add_to_cart(request):
-    return render(request, 'add_to_cart.html')
+    return render(request, "add_to_cart.html")
+
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, "about.html")
+
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
+            user = authenticate(email=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect("home")
+            else:
+                form.add_error(None, "Invalid login credentials.")
+    else:
+        form = LoginForm()
+    return render(request, "login.html", {"form": form})
+
 
 def register(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
             try:
@@ -34,18 +54,20 @@ def register(request):
                 profile.save()
                 user_exists = User.objects.filter(email=user.email).exists()
                 if user_exists:
-                    messages.success("User successfully registered and saved in the database.")
+                    messages.success(
+                        "User successfully registered and saved in the database."
+                    )
                 else:
                     messages.error("User registration failed.")
             except IntegrityError as e:
-                if 'UNIQUE constraint failed' in str(e):
-                    messages.error(request, 'User already exists.')
+                if "UNIQUE constraint failed" in str(e):
+                    messages.error(request, "User already exists.")
                 else:
-                    messages.error(request, 'An error occureed while registering.')
-                return render(request, 'register.html', {'form': form})
+                    messages.error(request, "An error occureed while registering.")
+                return render(request, "register.html", {"form": form})
         else:
-            messages.error(request, f'Invalid input: {form.errors}')    
-        
+            messages.error(request, f"Invalid input: {form.errors}")
+
     else:
         form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, "register.html", {"form": form})

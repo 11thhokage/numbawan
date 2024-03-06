@@ -14,7 +14,8 @@
                         <h4 class="text-white" style="letter-spacing: 5px; font-size: 20pt;">Welcome back</h4>
                     </div>
                     <div class="card-body">
-                        <form action="#" method="POST">
+                        <form action="/login/" method="POST">
+                            {% csrf_token %}
                             <div class="mb-3">
                                 <label class="form-label"><small> <i class="fa-regular fa-circle-user"></i>
                                         Username</label></small>
@@ -32,12 +33,24 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" name="#" class="btn btn-outline-success btn-sm text-center">Sign
+                                <button type="submit" class="btn btn-outline-success btn-sm text-center">Sign
                                     in</button>
                                 <a class="btn btn-outline-secondary btn-sm text-center"
                                     href="{% url 'register' %}">Create new account</a>
                             </div>
                         </form>
+                        {% if form.errors %}
+                        <br>
+                        <div class="alert alert-danger" role="alert">
+                            <ul class="errorlist">
+                                {% for field in form %}
+                                {% for error in field.errors %}
+                                <li>{{ field.label }}: {{ error }}</li>
+                                {% endfor %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
