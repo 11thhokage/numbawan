@@ -51,7 +51,7 @@ class TestNavigations(unittest.TestCase):
         logging.info("Testing Navigation Links & Clicking (Maximize window)...")
     # def test_nav_links(self):
         self.driver.get("http://127.0.0.1:8000/")
-        self.driver.minimize_window()
+        self.driver.maximize_window()
         WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Home')]")) and
             EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Menu')]")) and
