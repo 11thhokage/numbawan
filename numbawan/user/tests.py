@@ -212,7 +212,7 @@ class TestLoginPage(unittest.TestCase):
         self.assertTrue(self.driver.find_element(By.XPATH, "//form[@action='/login/']"))
 
 if __name__ == "__main__":
-    # Create a test suite and add the test cases in the desired order
+    # Test suite to run the desired order of test cases
     suite = unittest.TestSuite()
     suite.addTest(Testfrontend('test_nav_bar_elements'))
     suite.addTest(TestNavigations('test_Nav_Links'))
