@@ -7,25 +7,31 @@ from .models import Profile
 from .forms import RegisterForm, LoginForm
 
 
+# USER VIEW
 def home(request):
     return render(request, "home.html")
 
+def user_header(request):
+    return render(request, "user_header.html")
 
 def menu(request):
     return render(request, "menu.html")
 
-
 def product(request):
     return render(request, "product.html")
 
+def user_cart(request):
+    return render(request, "user_cart.html")
 
-def add_to_cart(request):
-    return render(request, "add_to_cart.html")
-
+def user_checkout(request):
+    return render(request, "user_checkout.html")
 
 def about(request):
     return render(request, "about.html")
 
+# ADMIN VIEW
+def admin_index(request):
+    return render(request, "admin_index.html")
 
 def login(request):
     if request.method == "POST":

@@ -77,8 +77,11 @@
 /* <--------END OF NAV DESIGN--------> */
 
 /* <--------SECTION DESIGN--------> */
-.overlap_section, .overlap_section_login{
+.overlap_section_login{
   margin-top: -120px;
+}
+.overlap_section{
+  margin-top: -250px;
 }
 /* <--------RESPONSIVE VIEW --------> */
   @media(max-width: 820px) {

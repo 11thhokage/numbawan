@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,34 +11,15 @@
 </head>
 
 <body>
-    {% include 'user_navbar.html' %}
+    {% block navbar %}
+        {% include 'user_navbar.html' %}
+    {% endblock %}
 
-    <section>
-        <div>{% block content %} {% endblock %}</div>
-    </section>
+    {% block content %}{% endblock %}
 
-    <hr>
-    <footer>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6">
-                        <p class="mb-0"><span style="font-weight: bold; font-size: 20pt;">Kopitler</span><br> <small>
-                                2024 Policies and Disclaimer.</small><br><small>Blk 5 Lot 5 Phase 56, Agbayag Street
-                                Mindanao</small> <br><small>Tel No: 0957 7165226</small> </p>
-                    </div>
-                    <div class="col-auto me-lg-4">
-                        <p class="mb-0"><span style="font-weight: bold; font-size: 15pt;">Let's Connect</span></p>
-                        <i class="fa-brands fa-facebook h3"></i></a>
-                        <i class="fa-brands fa-instagram h3 ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="{% static 'js/designfunc.js' %}"></script>
-    <script src="https://kit.fontawesome.com/f200f2da0d.js" crossorigin="anonymous"></script>
+    {% block footer %}
+        {% include "user_footer.html" %}
+    {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -47,5 +27,4 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

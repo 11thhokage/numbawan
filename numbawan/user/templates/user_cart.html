@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %} Kopitler {% endblock %}
+{% block content %}
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="var(--first-color)" fill-opacity="1"
+        d="M0,64L40,96C80,128,160,192,240,213.3C320,235,400,213,480,181.3C560,149,640,107,720,90.7C800,75,880,85,960,122.7C1040,160,1120,224,1200,218.7C1280,213,1360,139,1400,101.3L1440,64L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z">
+    </path>
+</svg>
+
+<section style="margin-top: -110px;">
+    <div class="container mb-5 my-5 pb-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12">
+                <table class="table table-striped text-center shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Size</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="10">No data</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="col-lg-12 d-flex justify-content-end">
+                    <a class="btn btn-outline-secondary btn-sm text-center"
+                    href="{% url 'user_checkout' %}">Cheek Out <i class="fa-solid fa-money-check"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
