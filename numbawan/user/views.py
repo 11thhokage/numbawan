@@ -33,6 +33,21 @@ def about(request):
 def admin_index(request):
     return render(request, "admin_index.html")
 
+def admin_acc_management(request):
+    return render(request, "admin_acc_management.html")
+
+def admin_category(request):
+    return render(request, "admin_category.html")
+
+def admin_product(request):
+    return render(request, "admin_product.html")
+
+def admin_order(request):
+    return render(request, "admin_order.html")
+
+def admin_view_order(request):
+    return render(request, "admin_view_order.html")
+
 def login(request):
     if request.method == "POST":
         form = LoginForm(request, data=request.POST)

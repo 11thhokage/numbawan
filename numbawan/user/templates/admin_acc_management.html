@@ -1,0 +1,42 @@
+{% extends "admin_base.html" %}
+{% block title %} Account Management {% endblock %}
+{% block content %}
+<section>
+    <div class="container-fluid px-4 mt-4" id="user_table">
+        <div class="row">
+            <h3 class="float-start">All user accounts information</h3>
+            <hr>
+        </div>
+        <div class="row float-end mb-3">
+            <form class="d-flex" role="search">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search Name..."
+                    aria-label="Search">
+            </form>
+        </div>
+        <table
+            class="table table-striped table-wrapper-scroll-y my-custom-scrollbar text-center shadow p-3 mb-5 bg-body-tertiary rounded">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Birthdate</th>
+                    <th>Phone No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Joseph Stalin</td>
+                    <td>bbc@gmail.com</td>
+                    <td>3/3/02</td>
+                    <td>092121421</td>
+                    <td>
+                        <a type="button" value="#" class="btn-sm"
+                            title="Delete User"><i class="fa-solid fa-trash" style="color: red;"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

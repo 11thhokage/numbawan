@@ -1,3 +1,4 @@
+<!-- admin_base.html -->
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
@@ -12,13 +13,59 @@
 </head>
 
 <body>
-    {% include 'admin_nav.html' %}
-    {% include 'admin_sidebar.html' %}
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3" href="{% url 'admin_index' %}">Admin Kōhī</a>
+        <a class="btn btn-success" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            aria-controls="offcanvasExample">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></div>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Kōhī Dashboard</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item h6">
+                    <a class="nav-link text-black" href="{% url 'admin_acc_management' %}"><i class="fa-solid fa-users"></i> Account Management</a>
+                </li>
+                <li class="nav-item h6">
+                    <a class="nav-link text-black" href="{% url 'admin_category' %}"><i class="fa-solid fa-mug-hot"></i> Category</a>
+                </li>
+                <li class="nav-item h6">
+                    <a class="nav-link text-black" href="{% url 'admin_product' %}"><i class="fa-brands fa-product-hunt"></i> Product</a>
+                </li>
+                <li class="nav-item h6">
+                    <a class="nav-link text-black" href="{% url 'admin_order' %}"><i class="fa-regular fa-newspaper"></i> Order</a>
+                </li>
+                <li class="nav-item h6">
+                    <a class="nav-link text-black" href="#"><i class="fa-solid fa-arrow-rotate-left"></i> Order History</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    {% block content %}{% endblock %}
+    {% block content %} {% endblock %}
 
-
-    {% block footer %}
-    {% include "admin_footer.html" %}{% endblock %}
+    <script src="{% static 'js/designfunc.js' %}"></script>
+    <script src="https://kit.fontawesome.com/f200f2da0d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
