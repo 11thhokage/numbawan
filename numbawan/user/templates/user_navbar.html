@@ -4,8 +4,8 @@
             Kopitler
         </a>
         <button class="navbar-toggler custom-toggler" style="border: none !important;" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" style="color:#fff !important;">
             </span>
         </button>
@@ -23,13 +23,19 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        User Name Logged
+                        {% if user.is_authenticated %}
+                        {{ user.name }}
+                        {% else %}
+                        Anonymous Login
+                        {% endif %}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping fa-fade"></i> My Cart</a></li>
-                        <li><a class="dropdown-item" href="#">  <i class="fa-solid fa-cog fa-spin"></i>
-                            Settings</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-fade"></i> Log Out</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-cart-shopping fa-fade"></i> My
+                                Cart</a></li>
+                        <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-cog fa-spin"></i>
+                                Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i
+                                    class="fa-solid fa-arrow-right-from-bracket fa-fade"></i> Log Out</a></li>
                     </ul>
                 </li>
             </ul>
