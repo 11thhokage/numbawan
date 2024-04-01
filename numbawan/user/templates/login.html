@@ -14,7 +14,7 @@
                         <h4 class="text-white" style="letter-spacing: 5px; font-size: 20pt;">Welcome back</h4>
                     </div>
                     <div class="card-body">
-                        <form action="/login/" method="POST">
+                        <form action="{% url 'login' %}" method="POST">
                             {% csrf_token %}
                             <div class="mb-3">
                                 <label class="form-label"><small> <i class="fa-regular fa-circle-user"></i>

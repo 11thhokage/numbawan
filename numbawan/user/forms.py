@@ -10,7 +10,7 @@ class RegisterForm(UserCreationForm):
         max_length=255, help_text="Require. Inform a valid email address."
     )
     phone = forms.CharField(
-        validators=[MinLengthValidator(11), MaxLengthValidator(11)],
+        validators=[MinLengthValidator(11), MaxLengthValidator(13)],
         help_text="Required. Must be exactly 11 numbers.",
     )
     birthday = forms.DateField(help_text="Require.")
@@ -61,6 +61,7 @@ class RegisterForm(UserCreationForm):
             user.save()
         return user
 
+
 class LoginForm(AuthenticationForm):
-    username = forms.EmailField(label='email')
+    username = forms.EmailField(label="email")
     password = forms.CharField(widget=forms.PasswordInput)
