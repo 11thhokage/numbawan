@@ -1,4 +1,15 @@
 # numbawan
+
+<h1>Members</h1>
+
+<ol>
+  <li>Lloyd Sydlik Nim - Dev 1</li>
+  <li>Andrew Jules Miyajima - Dev 2</li>
+  <li>Samuel James A. Gimena - QA 1</li>
+  <li>Paul Benedict M. Santos - QA 2</li>
+  <li>Andrew D. Robin - BA</li>
+</ol>
+
 <h1>How to setup/run files</h1>
 
 <h2>clone the repository</h2>
