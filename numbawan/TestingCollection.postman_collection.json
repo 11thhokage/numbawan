@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "a55d9c3a-f73c-467d-87da-38d9533c0d81",
+		"name": "TestingCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29031312"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"paulbenedicts482@gmail.com\",\r\n    \"password\": \"pbsantos123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/"
+			},
+			"response": [
+				{
+					"status": "403 FORBIDDEN",
+					"code": 403
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"paul\",\r\n    \"email\": \"paulbenedicts482@gmail.com\",\r\n    \"birthday\": \"04/08/2002\",\r\n    \"phone\": \"09774956345\",\r\n    \"password1\": \"pbsantos123456\",\r\n    \"password2\": \"pbsantos123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/register"
+			},
+			"response": [
+				{
+					"status": "403 FORBIDDEN",
+					"code": 403
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/menu/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/product/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "user_cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/user_cart/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "user_checkout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/user_checkout/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "About",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/store/about/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_acc_management",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/acc_management/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/category/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/product/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/order/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "admin_view_order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/s_admin/view_order/"
+			},
+			"response": [
+				{
+					"status": "200 OK",
+					"code": 200
+				}
+			]
+		},
+		{
+			"name": "user_checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Paul Benedict Santos\",\r\n    \"email\": \"paulbenedicts482@gmail.com\",\r\n    \"phone\": \"09774956345\",\r\n    \"address\": \"Quezon City\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/store/user_checkout/"
+			},
+			"response": [
+				{
+					"status": "403 FORBIDDEN",
+					"code": 403
+				}
+			]
+		}
+	]
+}
